@@ -1,0 +1,14 @@
+{
+  "name": "velar-detailing-static",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "python -m http.server 8080",
+    "check": "node --check scripts/site.js && node --check scripts/admin.js",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "prettier": "3.6.2"
+  }
+}

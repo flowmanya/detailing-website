@@ -1,0 +1,163 @@
+<!doctype html>
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <meta content="noindex,nofollow" name="robots" />
+    <title>Панель управления — VELAR</title>
+    <link href="./styles/admin.css" rel="stylesheet" />
+    <script defer="" src="./scripts/admin.js"></script>
+  </head>
+  <body>
+    <aside class="sidebar">
+      <a class="admin-brand" href="./index.html"
+        ><img
+          alt="VELAR Detailing Studio"
+          height="43"
+          src="./images/logo-light.svg"
+          width="180"
+      /></a>
+      <nav>
+        <button class="active" data-tab="dashboard">Обзор</button
+        ><button data-tab="requests">Заявки</button
+        ><button data-tab="services">Услуги и цены</button
+        ><button data-tab="settings">Контакты</button>
+      </nav>
+      <div class="sidebar-note">Данные хранятся только в этом браузере</div>
+      <a class="back-link" href="./index.html">← На сайт</a>
+    </aside>
+    <main>
+      <header>
+        <button aria-label="Открыть меню" class="menu">☰</button>
+        <div>
+          <p>VELAR / УПРАВЛЕНИЕ</p>
+          <h1 data-title="">Обзор</h1>
+        </div>
+        <button class="danger-outline" data-clear="">
+          Очистить демо-данные
+        </button>
+      </header>
+      <section class="view active" data-view="dashboard">
+        <div class="metrics">
+          <article>
+            <small>Всего заявок</small><b data-total="">0</b
+            ><span>за всё время</span>
+          </article>
+          <article>
+            <small>Новые</small><b data-new="">0</b
+            ><span>требуют внимания</span>
+          </article>
+          <article>
+            <small>Записи</small><b data-appointments="">0</b
+            ><span>на услуги</span>
+          </article>
+          <article>
+            <small>Звонки</small><b data-callbacks="">0</b
+            ><span>обратная связь</span>
+          </article>
+        </div>
+        <div class="dashboard-grid">
+          <article class="panel chart-panel">
+            <div class="panel-head">
+              <div>
+                <small>ДИНАМИКА</small>
+                <h2>Заявки за 7 дней</h2>
+              </div>
+            </div>
+            <div class="bars" data-bars=""></div>
+          </article>
+          <article class="panel donut-panel">
+            <div class="panel-head">
+              <div>
+                <small>СТРУКТУРА</small>
+                <h2>Типы обращений</h2>
+              </div>
+            </div>
+            <div class="donut" data-donut=""><span>0</span></div>
+            <div class="legend">
+              <span><i class="red"></i>Записи</span><span><i></i>Звонки</span>
+            </div>
+          </article>
+          <article class="panel recent">
+            <div class="panel-head">
+              <div>
+                <small>ПОСЛЕДНИЕ</small>
+                <h2>Новые обращения</h2>
+              </div>
+              <button data-tab-jump="requests">Все заявки →</button>
+            </div>
+            <div data-recent=""></div>
+          </article>
+        </div>
+      </section>
+      <section class="view" data-view="requests">
+        <div class="toolbar">
+          <input
+            data-search=""
+            placeholder="Поиск по имени, телефону или автомобилю"
+            type="search"
+          /><select data-filter="">
+            <option value="">Все статусы</option>
+            <option>Новая</option>
+            <option>Подтверждена</option>
+            <option>В работе</option>
+            <option>Завершена</option>
+            <option>Отменена</option></select
+          ><button data-export="">Экспорт CSV</button>
+        </div>
+        <div class="panel table-panel">
+          <table>
+            <thead>
+              <tr>
+                <th>Дата</th>
+                <th>Тип</th>
+                <th>Клиент</th>
+                <th>Контакт</th>
+                <th>Детали</th>
+                <th>Статус</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody data-requests=""></tbody>
+          </table>
+          <div class="empty" data-empty="">
+            Заявок пока нет. Отправьте форму на сайте для проверки.
+          </div>
+        </div>
+      </section>
+      <section class="view" data-view="services">
+        <div class="panel form-panel">
+          <div class="panel-head">
+            <div>
+              <small>КОНТЕНТ</small>
+              <h2>Услуги и цены</h2>
+            </div>
+            <span>Изменения сразу видны на сайте в этом браузере</span>
+          </div>
+          <div data-service-editor=""></div>
+          <button class="primary" data-save-services="">
+            Сохранить услуги
+          </button>
+        </div>
+      </section>
+      <section class="view" data-view="settings">
+        <div class="panel form-panel narrow">
+          <div class="panel-head">
+            <div>
+              <small>СТУДИЯ</small>
+              <h2>Контактные данные</h2>
+            </div>
+          </div>
+          <form data-settings="">
+            <label>Телефон<input name="phone" required="" /></label
+            ><label>Адрес<input name="address" required="" /></label
+            ><label>Часы работы<input name="hours" required="" /></label
+            ><button class="primary">Сохранить контакты</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <div class="toast" role="status"></div>
+  </body>
+</html>
