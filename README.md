@@ -86,19 +86,6 @@ npm run format:check
 
 `check` проверяет синтаксис клиентских сценариев, а `format:check` — единый стиль исходников.
 
-## Публикация на GitHub Pages
-
-```bash
-git init
-git add .
-git commit -m "Публикация сайта"
-git branch -M main
-git remote add origin https://github.com/USERNAME/REPOSITORY.git
-git push -u origin main
-```
-
-Затем откройте `Settings → Pages` и выберите `Source → GitHub Actions`. Workflow из `.github/workflows/pages.yml` опубликует сайт автоматически.
-
 ## Структура
 
 ```text
